@@ -1,0 +1,7 @@
+//#include "Displaying.h"
+#include "GenAlgorithm.h"
+//#include "Genotype.h"
+//#include "LibRand.h"
+//#include "NaturalHabitat.h"
+#include "Population.h"
+//#include "RandGen.h"
