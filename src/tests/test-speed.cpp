@@ -1,6 +1,6 @@
 #include <iostream>
 #include <windows.h>
-#include "../pneuro/nnperceptron.h"
+#include "../pneuro/nnlayer.h"
 #include "../pneuro/nnifc.h"
 #include "../pneuro/nnTraining.h"
 #include "../pneuro/nnGATraining.h"

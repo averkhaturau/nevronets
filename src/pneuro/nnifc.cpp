@@ -2,7 +2,6 @@
 #include "nnifc.h"
 #include "nn1x.h"
 #include <iostream>
-#include <iostream.h> // -для совместимости
 #include <assert.h>
 #include "nnTraining.h"
 
@@ -72,7 +71,7 @@ void CNNIfc::ReadFromFile(char *filename, CNeuroNet<CNNLayer> *a_NN, CActi &a_ac
 								a_NN->m_layers = new CNNLayer[numlayers];
 								a_NN->m_numlayers = numlayers;
 		//заполнение слоёв
-		for (int i=0; i<numlayers; ++i)
+		for (unsigned int i=0; i<numlayers; ++i)
 		{
 			SYGDATATYPE *_pRates;
 			//SYGDATATYPE *_pInput;

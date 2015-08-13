@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 //	unsigned int n,m;
 	//std::cout << "Enter this and prevous layes size:";
 	//std::cin >> n >> m;
- 	CNNLayer MyLayer(2, 2, f_sigmoid);
+ 	CNNLayer MyLayer(2u, 2u, acti_sigmoid);
 	MyLayer.SetRates(rates, 4);
 	std::cout << "Enter inputs: ";
 	std::cin >> inputs[0] >> inputs[1];

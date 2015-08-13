@@ -85,7 +85,7 @@ class CNaturalHabitat<CNNIndividual, CNNBackPropagation>
 : public CNaturalHabitat<CNNIndividual, CNNStochastic>
 {
 public:
-	void Mutate(tIndividual& a_Individual)
+	void Mutate(CNNIndividual& a_Individual)
 	{
 		//  выберем пример, наиболее расходящийся с выходом сети
 		unsigned int MaxI=0;

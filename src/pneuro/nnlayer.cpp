@@ -7,12 +7,12 @@ CNNLayer::CNNLayer()
 {
 }
 
-CNNLayer::CNNLayer(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, CActi &a_funcacti)
+CNNLayer::CNNLayer(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, const CActi &a_funcacti)
 {
 	Construct(iThisLayerSize, iPrevLayerSize, a_funcacti);
 }
 
-void CNNLayer::Construct(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, CActi &a_funcacti)
+void CNNLayer::Construct(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, const CActi &a_funcacti)
 {
 	m_iThisLayerSize = iThisLayerSize;
 	m_iPrevLayerSize = iPrevLayerSize;

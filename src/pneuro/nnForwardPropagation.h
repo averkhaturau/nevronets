@@ -102,7 +102,7 @@ public:
 	};
 
 	CNNForwardPropagation<tLayer> & operator = (const CNNForwardPropagation<tLayer> & a_NN)
-	{ // not tested
+	{
 		delete[] m_layers;
 		delete[] m_pBuf;
 

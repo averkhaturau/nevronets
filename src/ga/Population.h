@@ -38,7 +38,7 @@ public:
 			//CNaturalHabitat<CIndividual>::Mutate< CNNStochastic >(*Iter);
 			//CNNStochastic::Train(Iter,Iter->m_pTI,1e-7,1);
 			double blablabla=-0.73;
-			CNNStochastic::Train(Iter,Iter->m_pTI,1e-7, 50, blablabla);
+			CNNStochastic::Train(&*Iter,Iter->m_pTI,1e-7, 50, blablabla);
 			Iter->CalcUnfitness();
 			Iter->CalcCellularPoint();
 		}
@@ -68,7 +68,7 @@ public:
 
 	void FillRand(CRandGen& a_RandGen)
 	{
-		a_RandGen.SetRandBuff(this->begin(),
+		a_RandGen.SetRandBuff(&*this->begin(),
 			this->size()*sizeof(CIndividual));
 		CalcUnfitness();
 	};

@@ -66,7 +66,7 @@ public:
 	@param iThisLayerSize Число нейронов на этом слое (равно числу выходов (аксонов))
 	@param iPrevLayerSize Число нейронов на предыдущем слое (равно числу входов (дендридов))
 	*/
-	CNNLayer(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, CActi &a_funcacti);
+	explicit CNNLayer(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, const CActi &a_funcacti);
 	/// Деструктор
 	~CNNLayer();
 
@@ -122,7 +122,7 @@ public:
 protected:
 	void Destruct();
 public:
-	void Construct(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, CActi &a_funcacti);
+	void Construct(const unsigned int iThisLayerSize, const unsigned int iPrevLayerSize, const CActi &a_funcacti);
 };
 
 /**

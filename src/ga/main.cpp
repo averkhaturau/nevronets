@@ -11,6 +11,7 @@
 //#include "Displaying.h"
 #include "NaturalHabitat.h"
 #include "GenAlgorithm.h"
+#include "Displaying.h"
 
 
 int main(int argc, char *argv[])
@@ -23,13 +24,13 @@ int main(int argc, char *argv[])
 
 	CRandGen RandGen;
 	RandGen.SetSeed(MPI_Wtime()*1e7);
-	CPopulation Population(15);
+	CPopulation<CNNIndividual> Population(15);
 
-	Population.SetFitnessFunction(&g_NHabitat);
+	//Population.SetFitnessFunction(&g_NHabitat);
 	Population.FillRand(RandGen);
 	//Population.FillRand(RandGen, Min, Max);
 
-        CDisplaying D;
+    CDisplaying D;
 
 
 	if (myrank==0)
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
 	}
 
 	MPI_Barrier(MPI_COMM_WORLD);
-	CGenAlgorithm MyGenAlg;
+	CGenAlgorithm<CNNIndividual, CNNBackPropagation> MyGenAlg;
 	
 	char lastchar = ' ';
 	int iNumIter=0;
@@ -46,9 +47,9 @@ int main(int argc, char *argv[])
 	{
 
 		MyGenAlg.GenerationNext(Population);
-
+#if 0
 		// посмотрим
-		if (myrank==0)
+		if ( myrank==0)
 		{
 			printf("\n\nIteration %u:", ++iNumIter);
 		    D.Show(Population);
@@ -59,7 +60,7 @@ int main(int argc, char *argv[])
 			printf("\nBest goals in processes:");
 
 		}
-
+#endif
 		MPI_Barrier(MPI_COMM_WORLD);
 		printf(" %11.3e;", Population.FindBest()->GetUnfitness());
 

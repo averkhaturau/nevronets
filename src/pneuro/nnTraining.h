@@ -8,6 +8,7 @@
 
 #include "nn1x.h"
 #include "nnForwardPropagation.h"
+#include "nnifc.h"
 
 /*
 	Это абстрактный класс, обучающий абстрактную нейронную сеть.
@@ -154,8 +155,8 @@ public:
 	SYGDATATYPE CalcLipshic()
 	{// константа Липшица есть по пределению inf_i_j(||fi-fj||/||xi-xj||)
 		SYGDATATYPE Result = 0;
-		SYGDATATYPE fsize = begin()->GetOSize();
-		SYGDATATYPE xsize = begin()->GetISize();
+		const unsigned int fsize = begin()->GetOSize();
+        const unsigned int xsize = begin()->GetISize();
 		for (iterator Iter1=begin();Iter1!=end();++Iter1)
 		for (iterator Iter2=begin();Iter2!=end();++Iter2)
 		{	//перебираем все попарно
@@ -175,8 +176,8 @@ public:
 		///WARNING!!!: can work incorrect
 		// вычисление константы Липшица для двух примеров с номерами i и j)
 		SYGDATATYPE Result = 0;
-		SYGDATATYPE fsize = begin()->GetOSize();
-		SYGDATATYPE xsize = begin()->GetISize();
+		const unsigned int fsize = begin()->GetOSize();
+		const unsigned int xsize = begin()->GetISize();
 		iterator Iter1=begin()+i, Iter2=begin()+j;
 				SYGDATATYPE CurLip =
 				GetDiffNorm(Iter1->GetOutput(), Iter2->GetOutput(), fsize) /

@@ -94,6 +94,9 @@ public:
 		m_dCellularPoint[0] = gNew.GetCellularPoint();
 	};
 
+
+    CNNIndividual():m_pTI(nullptr), d_Errors(nullptr), m_dUnfitness(std::numeric_limits<decltype(m_dUnfitness)>::infinity()){}
+
 	~CNNIndividual()
 	{
 		delete d_Errors;

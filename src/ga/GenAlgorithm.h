@@ -19,8 +19,8 @@ public:
 
 	CGenAlgorithm(const unsigned int& a_MaxNumCreatures = 9)
 	{
-		m_HalfMaxNumCreatures = a_MaxNumCreatures>>1 + 1;
-		m_MaxMigrating = m_HalfMaxNumCreatures>>1 + 1;
+		m_HalfMaxNumCreatures = (a_MaxNumCreatures>>1) + 1;
+		m_MaxMigrating = (m_HalfMaxNumCreatures>>1) + 1;
 	};
 
 	void GenerationNext(CPopulation<tIndividual> &a_Population)
